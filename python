@@ -1,0 +1,47 @@
+""" A company is creating email accounts for its new employees. They want to use a naming convention for email addresses that consists of the first letter of the employee's first name, followed by their last name, followed by @company.com. 
+
+
+
+The company also has a separate email domain for administrative employees. 
+
+
+
+Write a program that prompts the user for their first name, last name, role, and company and then generates their email address using the appropriate naming convention based on their role. This is demonstrated in the below examples.
+
+
+
+Note:
+
+The generated email address should consist of the first letter of the first name, the last name in lowercase, and a suffix based on the role and company, all in lowercase.
+
+Input format :
+The first line of input consists of the first name of an employee as a string.
+
+The second line consists of the last name of an employee as a string.
+
+The third line consists of the role of the employee as a string.
+
+The last line consists of the company name as a string.
+
+Output format :
+The output consists of a single line containing the generated email address for the employee, following the specified naming convention."""
+
+
+first_name = input()
+last_name = input()
+role = input()
+company = input()
+
+first_name = first_name.lower()
+role = role.lower()
+company = company.lower()
+
+if role == "admin":
+    suffix = "@admin." + company + ".com"
+else:
+    suffix = "@" + company + ".com"
+
+email = first_name[0] + last_name.lower() + suffix
+
+# Print the email address
+print(email)
